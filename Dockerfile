@@ -43,7 +43,7 @@ RUN \
   echo "**** install mastodon ****" && \
   mkdir -p /app/www && \
   if [ -z ${MASTODON_VERSION+x} ]; then \
-    MASTODON_VERSION=$(date +%s); \
+    MASTODON_VERSION=main \
   fi && \
   curl -s -o \
     /tmp/mastodon.tar.gz -L \
