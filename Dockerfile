@@ -4,7 +4,6 @@ FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.24
 
 ARG BUILD_DATE
 ARG VERSION
-ARG MASTODON_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thespad"
 
@@ -42,11 +41,8 @@ RUN \
     yaml-dev && \
   echo "**** install mastodon ****" && \
   mkdir -p /app/www && \
-  if [ -z ${MASTODON_VERSION+x} ]; then \
-    MASTODON_VERSION=main \
-  fi && \
-  curl -s -o \
-    /tmp/mastodon.tar.gz -L \
+  curl -fsSL -o \
+    /tmp/mastodon.tar.gz \
     "https://github.com/TheEssem/mastodon/archive/main.tar.gz" && \
   tar xf \
     /tmp/mastodon.tar.gz -C \
@@ -92,13 +88,13 @@ RUN \
     $HOME/.bundle/cache \
     $HOME/.composer \
     /tmp/* && \
-	find /app/www/vendor/bundle/ruby/*/extensions/ \( -name gem_make.out -o -name mkmf.log \) -delete && \
+  find /app/www/vendor/bundle/ruby/*/extensions/ \( -name gem_make.out -o -name mkmf.log \) -delete && \
   # Remove tests, documentations and other useless files.
-	find /app/www/vendor/bundle/ruby/*/gems/ \( -name 'doc' \
+  find /app/www/vendor/bundle/ruby/*/gems/ \( -name 'doc' \
     -o -name 'spec' \
     -o -name 'test' \) \
-		-type d -maxdepth 2 -exec rm -fr "{}" + && \
-	find /app/www/vendor/bundle/ruby/*/gems/ \( -name 'README*' \
+    -type d -maxdepth 2 -exec rm -fr "{}" + && \
+  find /app/www/vendor/bundle/ruby/*/gems/ \( -name 'README*' \
     -o -name 'CHANGELOG*' \
     -o -name 'CONTRIBUT*' \
     -o -name '*LICENSE*' \
