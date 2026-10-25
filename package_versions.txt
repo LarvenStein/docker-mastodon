@@ -10,7 +10,7 @@ NAME                                                    VERSION           TYPE
 @csstools/css-tokenizer                                 4.0.0             npm                           
 @exodus/bytes                                           1.15.1            npm                           
 @ioredis/commands                                       1.10.0            npm                           
-@mastodon/mastodon                                      UNKNOWN           npm                           
+@TheEssem/mastodon                                      UNKNOWN           npm                           
 @mastodon/streaming                                     UNKNOWN           npm                           
 @opentelemetry/api                                      1.9.1             npm                           
 @pinojs/redact                                          0.4.0             npm                           
