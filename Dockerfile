@@ -47,7 +47,7 @@ RUN \
   fi && \
   curl -s -o \
     /tmp/mastodon.tar.gz -L \
-    "https://github.com/TheEssem/mastodon/archive/${MASTODON_VERSION}.tar.gz" && \
+    "https://github.com/TheEssem/mastodon/archive/main.tar.gz" && \
   tar xf \
     /tmp/mastodon.tar.gz -C \
     /app/www/ --strip-components=1 && \
