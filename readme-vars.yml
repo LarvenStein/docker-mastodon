@@ -2,7 +2,7 @@
 
 # project information
 project_name: mastodon
-project_url: "https://github.com/mastodon/mastodon/"
+project_url: "https://github.com/TheEssem/mastodon/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mastodon-banner.png"
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..
@@ -32,9 +32,9 @@ param_env_vars:
   - {env_var: "DB_PASS", env_value: "mastodon", desc: "Postgres password"}
   - {env_var: "DB_PORT", env_value: "5432", desc: "Postgres port"}
   - {env_var: "ES_ENABLED", env_value: "false", desc: "Enable or disable Elasticsearch (requires a separate ES instance)"}
-  - {env_var: "ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY", env_value: "", desc: "Primary key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files)."}
-  - {env_var: "ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY", env_value: "", desc: "Deterministic key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files)."}
-  - {env_var: "ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT", env_value: "", desc: "Derivation salt for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files)."}
+  - {env_var: "ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY", env_value: "", desc: "Primary key for [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files)."}
+  - {env_var: "ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY", env_value: "", desc: "Deterministic key for [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files)."}
+  - {env_var: "ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT", env_value: "", desc: "Derivation salt for [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files)."}
   - {env_var: "SECRET_KEY_BASE", env_value: "", desc: "Browser session secret. Changing it will break all active browser sessions."}
   - {env_var: "OTP_SECRET", env_value: "", desc: "MFA secret. Changing it after initial setup will break two-factor authentication."}
   - {env_var: "VAPID_PRIVATE_KEY", env_value: "", desc: "Push notification private key. Changing it after initial setup will break push notifications."}
@@ -92,7 +92,7 @@ app_setup_block: |
 
   This container *requires* separate postgres and redis instances to run.
 
-  We support all of the official [environment variables](https://docs.joinmastodon.org/admin/config) for configuration. In place of adding them all to your run/compose you can use an env file such as [this example](https://github.com/mastodon/mastodon/blob/main/.env.production.sample) from the upstream project.
+  We support all of the official [environment variables](https://docs.joinmastodon.org/admin/config) for configuration. In place of adding them all to your run/compose you can use an env file such as [this example](https://github.com/TheEssem/mastodon/blob/main/.env.production.sample) from the upstream project.
 
   For more information check out the [mastodon documentation](https://docs.joinmastodon.org/).
 
@@ -178,7 +178,7 @@ changelogs:
   - {date: "20.10.25:", desc: "Add vips-heif."}
   - {date: "08.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "06.06.25:", desc: "Rebase to Alpine 3.21, replace deprecated imagemagick with vips."}
-  - {date: "08.10.24:", desc: "Rebase to Alpine 3.20, enable [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files). Existing users should update their nginx confs to avoid http2 deprecation warnings."}
+  - {date: "08.10.24:", desc: "Rebase to Alpine 3.20, enable [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files). Existing users should update their nginx confs to avoid http2 deprecation warnings."}
   - {date: "21.09.23:", desc: "Rebase to Alpine 3.18, migrate to s6v3."}
   - {date: "25.05.23:", desc: "Adjust apk flags."}
   - {date: "09.02.23:", desc: "Add Glitch branch."}

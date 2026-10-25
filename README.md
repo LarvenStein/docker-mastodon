@@ -36,9 +36,9 @@ Find us at:
 [![Docker Stars](https://img.shields.io/docker/stars/linuxserver/mastodon.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=stars&logo=docker)](https://hub.docker.com/r/linuxserver/mastodon)
 [![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-mastodon%2Fjob%2Fmain%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-mastodon/job/main/)
 
-[Mastodon](https://github.com/mastodon/mastodon/) is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..
+[Mastodon](https://github.com/TheEssem/mastodon/) is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..
 
-[![mastodon](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mastodon-banner.png)](https://github.com/mastodon/mastodon/)
+[![mastodon](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mastodon-banner.png)](https://github.com/TheEssem/mastodon/)
 
 ## Supported Architectures
 
@@ -81,7 +81,7 @@ Using `tootctl` requires you to complete the initial Mastodon configuration firs
 
 This container *requires* separate postgres and redis instances to run.
 
-We support all of the official [environment variables](https://docs.joinmastodon.org/admin/config) for configuration. In place of adding them all to your run/compose you can use an env file such as [this example](https://github.com/mastodon/mastodon/blob/main/.env.production.sample) from the upstream project.
+We support all of the official [environment variables](https://docs.joinmastodon.org/admin/config) for configuration. In place of adding them all to your run/compose you can use an env file such as [this example](https://github.com/TheEssem/mastodon/blob/main/.env.production.sample) from the upstream project.
 
 For more information check out the [mastodon documentation](https://docs.joinmastodon.org/).
 
@@ -242,9 +242,9 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e DB_PASS=mastodon` | Postgres password |
 | `-e DB_PORT=5432` | Postgres port |
 | `-e ES_ENABLED=false` | Enable or disable Elasticsearch (requires a separate ES instance) |
-| `-e ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=` | Primary key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files). |
-| `-e ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=` | Deterministic key for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files). |
-| `-e ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=` | Derivation salt for [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files). |
+| `-e ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=` | Primary key for [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files). |
+| `-e ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=` | Deterministic key for [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files). |
+| `-e ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=` | Derivation salt for [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files). |
 | `-e SECRET_KEY_BASE=` | Browser session secret. Changing it will break all active browser sessions. |
 | `-e OTP_SECRET=` | MFA secret. Changing it after initial setup will break two-factor authentication. |
 | `-e VAPID_PRIVATE_KEY=` | Push notification private key. Changing it after initial setup will break push notifications. |
@@ -440,7 +440,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 * **20.10.25:** - Add vips-heif.
 * **08.07.25:** - Rebase to Alpine 3.22.
 * **06.06.25:** - Rebase to Alpine 3.21, replace deprecated imagemagick with vips.
-* **08.10.24:** - Rebase to Alpine 3.20, enable [Active Record Encryption](https://github.com/mastodon/mastodon/pull/29831/files). Existing users should update their nginx confs to avoid http2 deprecation warnings.
+* **08.10.24:** - Rebase to Alpine 3.20, enable [Active Record Encryption](https://github.com/TheEssem/mastodon/pull/29831/files). Existing users should update their nginx confs to avoid http2 deprecation warnings.
 * **21.09.23:** - Rebase to Alpine 3.18, migrate to s6v3.
 * **25.05.23:** - Adjust apk flags.
 * **09.02.23:** - Add Glitch branch.
