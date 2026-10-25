@@ -43,8 +43,7 @@ RUN \
   echo "**** install mastodon ****" && \
   mkdir -p /app/www && \
   if [ -z ${MASTODON_VERSION+x} ]; then \
-    MASTODON_VERSION=$(curl -sX GET "https://api.github.com/repos/TheEssem/mastodon/tags/latest" \
-    | jq -r '.tag_name'); \
+    MASTODON_VERSION=$(date +%s); \
   fi && \
   curl -s -o \
     /tmp/mastodon.tar.gz -L \
