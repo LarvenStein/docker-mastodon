@@ -21,8 +21,9 @@ jobs:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        
-    - run: echo "MASTODON_VERSION=LarvenStein/docker-mastodon:$(date +%s);"
+
+    - name: Set image tag
+      run: echo "MASTODON_VERSION=${{ env.REGISTRY }}/larvenstein/docker-mastodon:$(date +%s)" >> "$GITHUB_ENV"
 
     - name: Build and push Docker image
       id: push
