@@ -54,7 +54,7 @@ RUN \
   bundle install -j"$(nproc)" --no-cache && \
   npm install -g corepack && \
   corepack enable && \
-  yarn workspaces focus --production @TheEssem/mastodon && \
+  yarn workspaces focus --production "$(node -p "require('./package.json').name")" && \
   ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=precompile_placeholder \
   ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=precompile_placeholder \
   ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=precompile_placeholder \
